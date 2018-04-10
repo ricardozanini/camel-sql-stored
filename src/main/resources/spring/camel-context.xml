@@ -17,7 +17,8 @@
        		<camel:route id="routeStoredProcedureTest">
        			<camel:from uri="direct:sp-test" />
        			<camel:log message="$simple{body}"></camel:log>
-       			<camel:to id="_to1" uri="sql-stored:IS_PRIME(INTEGER ${body})?dataSource=#datasource"/>
+       			<!-- camel:to id="_to1" uri="sql-stored:IS_PRIME(INTEGER ${body})?dataSource=#datasource"/ -->
+       			<camel:to id="_to1" uri="sql-stored:IS_PRIME(INTEGER :#$simple{body.number})?dataSource=#datasource"/>
        			<camel:to uri="mock:result"/>
        		</camel:route>
        </camel:camelContext>
