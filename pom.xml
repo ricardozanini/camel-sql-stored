@@ -20,7 +20,7 @@
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>fabric8-project-bom-camel-spring-boot</artifactId>
-        <version>2.2.170.redhat-000019</version>
+        <version>${fabric8.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
